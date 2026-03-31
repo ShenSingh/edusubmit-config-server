@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: student-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/student_db
+    username: student_user
+    password: student_password
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

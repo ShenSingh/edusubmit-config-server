@@ -1,0 +1,16 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: submission-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/submission_db
+    username: submission_user
+    password: submission_password
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
