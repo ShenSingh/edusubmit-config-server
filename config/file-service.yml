@@ -7,12 +7,12 @@ spring:
 
 file:
   storage:
-    path: /app/uploads  # Update for containerized deployment
+    path: /app/uploads
 
 eureka:
   client:
     service-url:
-      defaultZone: http://platform-vm-external-ip:8761/eureka/  # Update with actual IP
+      defaultZone: http://node-a.platform:8761/eureka/, http://node-b.platform:8761/eureka/, http://node-c.platform:8761/eureka/
 
 management:
   endpoints:

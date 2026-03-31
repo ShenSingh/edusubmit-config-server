@@ -13,7 +13,7 @@ spring:
               '[/**]':
                 allowedOrigins:
                   - "http://localhost:5173"
-                  - "https://your-frontend-domain.com"  # Update with your actual domain
+                  - "https://your-frontend-domain.com"
                 allowedMethods:
                   - GET
                   - POST
@@ -26,7 +26,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://platform-vm-external-ip:8761/eureka/  # Update with actual IP
+      defaultZone: http://node-a.platform:8761/eureka/, http://node-b.platform:8761/eureka/, http://node-c.platform:8761/eureka/
 
 management:
   endpoints:
