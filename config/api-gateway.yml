@@ -13,6 +13,7 @@ spring:
               '[/**]':
                 allowedOrigins:
                   - "http://localhost:5173"
+                  - "https://your-frontend-domain.com"  # Update with your actual domain
                 allowedMethods:
                   - GET
                   - POST
@@ -21,8 +22,17 @@ spring:
                   - OPTIONS
                 allowedHeaders:
                   - "*"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://platform-vm-external-ip:8761/eureka/  # Update with actual IP
+
 management:
   endpoints:
     web:
       exposure:
         include: health,info
+  endpoint:
+    health:
+      show-details: always

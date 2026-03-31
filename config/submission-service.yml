@@ -6,10 +6,18 @@ spring:
     name: submission-service
   data:
     mongodb:
-      uri: mongodb://localhost:27017/edusubmit_submission_db
+      uri: mongodb://services-vm-external-ip:27017/edusubmit_submission_db  # Update with actual IP
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://platform-vm-external-ip:8761/eureka/  # Update with actual IP
 
 management:
   endpoints:
     web:
       exposure:
         include: health,info
+  endpoint:
+    health:
+      show-details: always

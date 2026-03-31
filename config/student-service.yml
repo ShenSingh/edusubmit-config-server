@@ -5,12 +5,25 @@ spring:
   application:
     name: student-service
   datasource:
-    url: jdbc:postgresql://localhost:5432/student_db
+    url: jdbc:postgresql://services-vm-external-ip:5432/student_db  # Update with actual IP
     username: student_user
     password: student_password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://platform-vm-external-ip:8761/eureka/  # Update with actual IP
 
 management:
   endpoints:
     web:
       exposure:
         include: health,info
+  endpoint:
+    health:
+      show-details: always
